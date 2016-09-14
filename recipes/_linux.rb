@@ -37,7 +37,7 @@ when "centos", "redhat"
 
   yum_repository "sensu" do
     repo = node.sensu.use_unstable_repo ? "yum-unstable" : "yum"
-    url "http://repos.sensuapp.org/#{repo}/el/#{node['platform_version'].to_i}/$basearch/"
+    baseurl "http://repos.sensuapp.org/#{repo}/el/#{node['platform_version'].to_i}/$basearch/"
     action :add
   end
 when "fedora"
